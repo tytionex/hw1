@@ -11,29 +11,34 @@ the function below should be the only one in this file.
 */
 
 #include "split.h"
+#include <cstddef>
 
 /* Add a prototype for a helper function here if you need */
 
 void split(Node*& in, Node*& odds, Node*& evens)
 {
+  // code to set the original head to null
+  Node *temp = in;
+  in = NULL;
   // base case
-  if (in == NULL)
+  if (temp == NULL)
   {
     odds = NULL;
     evens = NULL;
+
     return;
   }
 
-  else if (in->value % 2 == 0)
+  else if (temp->value % 2 == 0)
   {
-    evens = in;
-    split(in->next, odds, evens->next);
+    evens = temp;
+    split(temp->next, odds, evens->next);
   }
 
   else
   {
-    odds = in;
-    split(in->next, odds->next, evens);
+    odds = temp;
+    split(temp->next, odds->next, evens);
   }
 }
 
