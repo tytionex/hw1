@@ -29,12 +29,14 @@ size_t ULListStr::size() const
 // How to return const reference?
 
 std::string const & ULListStr::back() const {
-  if(tail_ == nullptr){
+  
+  if(head_ == nullptr){
     throw std::invalid_argument("Bad location");
   }
   return tail_ -> val[tail_ -> last-1];
 }
 std::string const & ULListStr::front() const{
+  
   if(tail_ == nullptr){
     throw std::invalid_argument("Bad location");
   }
@@ -54,13 +56,25 @@ void ULListStr::pop_front()
     Item *temp = head_;
     if(nextNode != nullptr){
       temp -> next -> prev = nullptr; 
+      temp -> next = nullptr; 
+      temp = head_ -> next; 
+      delete head_;
+      head_ = nextNode;
+    }
+    else 
+    {
+      temp -> next = nullptr; 
+      //temp = head_ -> next; 
+      //delete head_;
+      tail_ = nextNode;
+      head_ = nextNode;
     }
     //temp -> next -> prev = nullptr; 
-    temp -> next = nullptr; 
-    temp = head_ -> next; 
 
-    delete head_;
-    head_ = nextNode; 
+    // temp -> next = nullptr; 
+    // temp = head_ -> next; 
+    // delete head_;
+    // head_ = nextNode; 
 
   }
 }
@@ -75,14 +89,23 @@ void ULListStr::pop_back()
     
     Item *temp = tail_;
     Item *prevNode = tail_ -> prev; 
-    if(prevNode != nullptr){
+    if(prevNode != nullptr)
+    {
       //prevNode -> next = nullptr; 
-        temp -> prev -> next = nullptr;
+      temp -> prev -> next = nullptr;
+      tail_ -> prev = nullptr;
+      delete tail_;
+      tail_ = prevNode;
     }
-    tail_ -> prev = nullptr;
-    delete tail_;
-    
-    tail_ = prevNode; 
+    else {
+      tail_ -> prev = nullptr;
+      delete tail_;
+      tail_ = prevNode;
+      head_ = prevNode;
+    }
+    // tail_ -> prev = nullptr;
+    // delete tail_;
+    // tail_ = prevNode; 
 
   }
   
@@ -253,29 +276,3 @@ void ULListStr::clear()
   tail_ = NULL;
   size_ = 0;
 }
-
-
-
-
- /*
-  Item* top = head_;
-  size_t temp1 = loc;
-  size_t temp2 = 0;
-  size_t temp3 = 0;
-  size_t temp4 = 0;
-  int counter = 0;
-  std::string* ptr;
-
-  if(loc > size_)
-  {
-    return NULL; 
-  }
-
-  temp2 = top -> first;
-  temp3 = top -> last;
-  // size of given array 
-  temp4 = temp3 - temp2; 
-
-
-  *ptr = top->val[temp2 + loc -1];
-  */

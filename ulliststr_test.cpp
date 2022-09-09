@@ -36,10 +36,10 @@ int main()
 
   assert( dat.size() == 10 );
 
-  cout << "size:  " << dat.size() << endl;
-  cout << "empty: " << dat.empty() << endl;
-  cout << "front: " << dat.front() << endl;
-  cout << "back:  " << dat.back() << endl;
+  cout << "size:   " << dat.size() << endl;
+  cout << "empty:  " << dat.empty() << endl;
+  cout << "front:  " << dat.front() << endl;
+  cout << "back:   " << dat.back() << endl;
   cout << "loc:0   " << dat.get(0) << endl;
   cout << "loc:1   " << dat.get(1) << endl;
   cout << "loc:2   " << dat.get(2) << endl;
@@ -49,7 +49,7 @@ int main()
   cout << "loc:6   " << dat.get(6) << endl;
   cout << "loc:7   " << dat.get(7) << endl;
   cout << "loc:8   " << dat.get(8) << endl;
-  cout << "loc:9  " << dat.get(9) << endl;
+  cout << "loc:9   " << dat.get(9) << endl;
   cout << "____________________" << endl;
   
   
@@ -75,9 +75,9 @@ int main()
   dat1.push_front("l"); // 10
   dat1.push_front("m"); // 11
   dat1.pop_front(); // 10
-  cout << "size:  " << dat1.size() << endl;
-  cout << "front: " << dat1.front() << endl;
-  cout << "back:  " << dat1.back() << endl;
+  cout << "size:   " << dat1.size() << endl;
+  cout << "front:  " << dat1.front() << endl;
+  cout << "back:   " << dat1.back() << endl;
   cout << "loc:0   " << dat1.get(0) << endl;
   cout << "loc:9   " << dat1.get(9) << endl;
   cout << "____________________" << endl;
@@ -133,56 +133,21 @@ int main()
 
 
 
-//____________________________________________
-  /* 
-  testing call front on the an empty
-  should throw an exception
-  */
-  cout << "dat4 test:" << endl;
-  ULListStr dat4;
-  dat4.push_back("z");
-  //dat4.pop_back();
-  dat4.pop_back();
-  
-  cout << "size:  " << dat4.size() << endl;
-  cout << "front: " << dat4.front() << endl;
-  // cout << "back:  " << dat4.back() << endl;
-  cout << "____________________" << endl;
-  
-
-
-// // testing .push_back delete node then push_back on empty node
+// //____________________________________________
+//   /* 
+//   testing call front on the an empty
+//   should throw an exception
+//   test case not needed
+//   */
+//   cout << "dat4 test:" << endl;
+//   ULListStr dat4;
+//   dat4.push_back("z");
+//   //dat4.pop_front();
+//   dat4.pop_back();
+//   cout << "size:  " << dat4.size() << endl;
+//   //cout << "front: " << dat4.front() << endl;
+//   cout << "back:  " << dat4.back() << endl;
 //   cout << "____________________" << endl;
-//   cout << "dat6 test:" << endl;
-//   ULListStr dat6;
-//   dat6.push_front("c");
-//   dat6.pop_front();
-//   dat6.push_front("d");
-
-//   cout << "size:   " << dat6.back() << endl;
-//   cout << "front:  " << dat6.back() << endl;
-//   cout << "back.:  " << dat6.front() << endl;
-//   cout << "____________________" << endl;
-
-//   // testing push front on empty node
-//   cout << "____________________" << endl;
-//   cout << "dat5 test:" << endl;
-//   ULListStr dat5;
-//   dat5.push_front("c");
-//   dat5.pop_front();
-//   dat5.push_front("d");
-
-//   cout << "size:   " << dat5.back() << endl;
-//   cout << "front:  " << dat5.back() << endl;
-//   cout << "back.:  " << dat5.front() << endl;
-//   cout << "____________________" << endl;
-
   
-  
-
-  
-  
-  
-
   return 0;
 }
