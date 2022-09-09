@@ -29,17 +29,21 @@ size_t ULListStr::size() const
 // How to return const reference?
 
 std::string const & ULListStr::back() const {
-  
+  /*
   if(head_ == nullptr){
     throw std::invalid_argument("Bad location");
   }
+  */
+
   return tail_ -> val[tail_ -> last-1];
 }
 std::string const & ULListStr::front() const{
-  
+  /*
   if(tail_ == nullptr){
     throw std::invalid_argument("Bad location");
   }
+  */
+
   // elegant solution from Denis
   return head_ -> val[head_ -> first];
 }
@@ -65,7 +69,7 @@ void ULListStr::pop_front()
     {
       temp -> next = nullptr; 
       //temp = head_ -> next; 
-      //delete head_;
+      delete head_;
       tail_ = nextNode;
       head_ = nextNode;
     }

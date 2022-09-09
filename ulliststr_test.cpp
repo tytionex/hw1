@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
 
-//____________________________________________
+  /*____________________________________________*/
   /*
   test dat
   pushing back till 11 items are in the list 
@@ -53,7 +53,7 @@ int main()
   cout << "____________________" << endl;
   
   
-//____________________________________________
+  /*____________________________________________*/
   /* 
   dat1 test
   testing .push_front where the one node is full and the other is with one element
@@ -82,7 +82,7 @@ int main()
   cout << "loc:9   " << dat1.get(9) << endl;
   cout << "____________________" << endl;
 
-//____________________________________________
+  /*____________________________________________*/
   /* 
   test to see if the proper element is still there
   two nodes created one with an elemtent at the back and 
@@ -99,7 +99,7 @@ int main()
   cout << "loc:   " << dat2.get(0) << endl;
   cout << "____________________" << endl;
 
-//____________________________________________
+  /*____________________________________________*/
   /*
   testing removing from the back and the front 
   string 5 should be at the middle and still exist
@@ -131,9 +131,22 @@ int main()
   cout << "loc:0  " << dat3.get(0) << endl;
   cout << "____________________" << endl;
 
+  /*____________________________________________*/
+  /*
+  create new node, then pop front. The node doesn't exist. then
+  create a new node.
+  */
+  cout << "dat5 test:" << endl;
+  ULListStr dat5;
+  dat5.push_back("z");
+  dat5.pop_back();
+  dat5.push_back("z");
+  cout << "size:  " << dat3.size() << endl;
+  cout << "loc:0  " << dat3.get(0) << endl;
+  cout << "____________________" << endl;
 
 
-// //____________________________________________
+//   /*____________________________________________*/
 //   /* 
 //   testing call front on the an empty
 //   should throw an exception
