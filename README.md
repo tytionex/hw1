@@ -3,3 +3,6 @@
 
 2. to run the the test file
     - ./ulliststr_test 
+
+3. Note:
+    - dat4 is testing if the there is a call to pop front/back, but Prof Reddekop says to ignore that edge case
